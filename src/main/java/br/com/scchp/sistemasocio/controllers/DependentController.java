@@ -19,7 +19,7 @@ public class DependentController {
 
     @RequestMapping(method = RequestMethod.GET, params = {"name"})
     public ResponseEntity getDependentAllByName(@RequestParam(value="name") String name){
-        return new ResponseEntity(dependentRepository.findByName(name), HttpStatus.OK);
+        return new ResponseEntity(dependentRepository.findAllByName(name), HttpStatus.OK);
     }
 
     @RequestMapping(method = RequestMethod.POST)

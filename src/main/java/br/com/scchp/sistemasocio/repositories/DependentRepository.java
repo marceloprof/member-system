@@ -12,5 +12,5 @@ import java.util.List;
  */
 @Repository
 public interface DependentRepository extends CrudRepository<Dependent, Long>{
-    List<Dependent> findByName(String name);
+    List<Dependent> findAllByName(String name);
 }
