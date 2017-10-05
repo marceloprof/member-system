@@ -5,10 +5,12 @@ import br.com.scchp.sistemasocio.entities.Member;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 /**
  * Created by milene on 27/09/17.
  */
 @Repository
 public interface DependentRepository extends CrudRepository<Dependent, Long>{
-    public Dependent findByName(String name);
+    List<Dependent> findByName(String name);
 }

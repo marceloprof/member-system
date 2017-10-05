@@ -28,8 +28,8 @@ public class MemberController {
     }
 
     @RequestMapping(method = RequestMethod.GET, params = {"name"})
-    public ResponseEntity getMemberByName(@RequestParam(value="name") String name){
-        return new ResponseEntity(memberRepository.findByName(name), HttpStatus.OK);
+    public ResponseEntity getMemberAllByName(@RequestParam(value="name") String name){
+        return new ResponseEntity(memberRepository.findAllByName(name), HttpStatus.OK);
     }
 
     @RequestMapping(method = RequestMethod.POST)

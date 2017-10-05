@@ -18,7 +18,7 @@ public class DependentController {
     private DependentRepository dependentRepository;
 
     @RequestMapping(method = RequestMethod.GET, params = {"name"})
-    public ResponseEntity getDependentByName(@RequestParam(value="name") String name){
+    public ResponseEntity getDependentAllByName(@RequestParam(value="name") String name){
         return new ResponseEntity(dependentRepository.findByName(name), HttpStatus.OK);
     }
 
@@ -28,7 +28,7 @@ public class DependentController {
     }
 
     @RequestMapping(method = RequestMethod.DELETE, value = "/{id}")
-    public ResponseEntity removeDependent(@PathVariable Long id) {
+    public ResponseEntity deleteDependent(@PathVariable Long id) {
         dependentRepository.delete(id);
         return new ResponseEntity("Dependent deleted successfully!", HttpStatus.CREATED);
     }
